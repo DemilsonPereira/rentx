@@ -31,7 +31,6 @@ class Server {
 
   routes(): void {
     // this.app.use(router);
-    this.app.use('/categories', categoriesRoutes);
     this.app.get('/', (request: Request, response: Response) => {
       return response.json({ msg: "'Server Online! 🙏'" });
     });
@@ -41,6 +40,25 @@ class Server {
 
       return response.json({ name });
     });
+    this.app.use('/categories', categoriesRoutes);
+    this.app.use(
+      (
+        err: Error,
+        request: Request,
+        response: Response,
+        next: NextFunction,
+      ) => {
+        if (err instanceof Error) {
+          return response.status(400).json({
+            error: err.message,
+          });
+        }
+        return response.status(500).json({
+          status: 'error',
+          message: 'Internal Server Error',
+        });
+      },
+    );
   }
 
   public start(): void {
