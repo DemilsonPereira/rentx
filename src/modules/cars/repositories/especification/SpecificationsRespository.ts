@@ -4,7 +4,7 @@ import {
   ICreateEspecificationDTO,
 } from './ISpecificationRepository';
 
-class EspecificationsRepository implements IEspecificationsRepository {
+class SpecificationsRepository implements IEspecificationsRepository {
   private especifications: Especification[];
 
   constructor() {
@@ -35,4 +35,4 @@ class EspecificationsRepository implements IEspecificationsRepository {
   }
 }
 
-export { EspecificationsRepository };
+export { SpecificationsRepository };
