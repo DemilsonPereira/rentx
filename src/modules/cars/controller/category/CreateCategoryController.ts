@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 
-import { CreateCategoryService } from '../../../services/cars/category/CreateCategoryService';
+import { CreateCategoryService } from '../../services/category/CreateCategoryService';
 
 class CreateCategoryController {
   constructor(private createCategoryService: CreateCategoryService) {}

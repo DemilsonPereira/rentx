@@ -1,14 +1,14 @@
-import { Especification } from '../../model/cars/Specification';
+import { Specification } from '../../model/Specification';
 
-interface ICreateEspecificationDTO {
+interface ICreateSpecificationDTO {
   name: string;
   description: string;
 }
 
-interface IEspecificationsRepository {
-  findByName(name: string): Especification;
-  list(): Especification[];
-  create({ name, description }: ICreateEspecificationDTO): void;
+interface ISpecificationsRepository {
+  findByName(name: string): Specification;
+  list(): Specification[];
+  create({ name, description }: ICreateSpecificationDTO): void;
 }
 
-export { IEspecificationsRepository, ICreateEspecificationDTO };
+export { ISpecificationsRepository, ICreateSpecificationDTO };

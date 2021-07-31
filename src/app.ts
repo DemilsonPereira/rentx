@@ -4,7 +4,7 @@ import morgan from 'morgan';
 import path from 'path';
 
 import { categoriesRoutes } from './routes/categories.routes';
-import { especificationsRoutes } from './routes/specifications.routes';
+import { specificationsRoutes } from './routes/specifications.routes';
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 require('dotenv').config();
@@ -36,7 +36,7 @@ class Server {
       return response.json({ msg: "'Server Online! 🙏'" });
     });
     this.app.use('/categories', categoriesRoutes);
-    this.app.use('/especifications', especificationsRoutes);
+    this.app.use('/specifications', specificationsRoutes);
     this.app.use(
       (
         err: Error,

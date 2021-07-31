@@ -1,5 +1,5 @@
-import { Especification } from '../../../model/cars/Specification';
-import { IEspecificationsRepository } from '../../../repositories/especification/ISpecificationRepository';
+import { Especification } from '../../model/Specification';
+import { IEspecificationsRepository } from '../../repositories/especification/ISpecificationRepository';
 
 class ListSpecificationService {
   constructor(private especificationRepository: IEspecificationsRepository) {}

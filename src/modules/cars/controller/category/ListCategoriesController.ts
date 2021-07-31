@@ -1,8 +1,8 @@
 import { Request, Response } from 'express';
 
-import { ListCategoryService } from '../../../services/cars/category/ListCategoryService';
+import { ListCategoryService } from '../../services/category/ListCategoryService';
 
-class ListSpecificationController {
+class ListCategoriesController {
   constructor(private listCategoryService: ListCategoryService) {}
   // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
   handle(request: Request, response: Response): Response {
@@ -12,4 +12,4 @@ class ListSpecificationController {
   }
 }
 
-export { ListSpecificationController };
+export { ListCategoriesController };

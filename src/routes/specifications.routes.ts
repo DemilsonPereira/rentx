@@ -1,15 +1,18 @@
 import { Router } from 'express';
 
-import { createCategoryController } from '../modules/cars/services/cars/category';
+import {
+  createSpecificationController,
+  listSpecificationController,
+} from '../modules/cars/services/specification';
 
-const especificationsRoutes = Router();
+const specificationsRoutes = Router();
 
-especificationsRoutes.post('/', (request, response) => {
-  return createCategoryController.handle(request, response);
+specificationsRoutes.post('/', (request, response) => {
+  return createSpecificationController.handle(request, response);
 });
 
-especificationsRoutes.get('/', (request, response) => {
-  return listCategoriesController.handle(request, response);
+specificationsRoutes.get('/', (request, response) => {
+  return listSpecificationController.handle(request, response);
 });
 
-export { especificationsRoutes };
+export { specificationsRoutes };

@@ -3,7 +3,7 @@ import { Router } from 'express';
 import {
   createCategoryController,
   listCategoriesController,
-} from '../modules/cars/services/cars/category';
+} from '../modules/cars/services/category';
 
 const categoriesRoutes = Router();
 

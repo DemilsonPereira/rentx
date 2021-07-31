@@ -1,37 +1,37 @@
-import { Especification } from '../../model/cars/Specification';
+import { Specification } from '../../model/Specification';
 import {
-  IEspecificationsRepository,
-  ICreateEspecificationDTO,
+  ISpecificationsRepository,
+  ICreateSpecificationDTO,
 } from './ISpecificationRepository';
 
-class SpecificationsRepository implements IEspecificationsRepository {
-  private especifications: Especification[];
+class SpecificationsRepository implements ISpecificationsRepository {
+  private specifications: Specification[];
 
   constructor() {
-    this.especifications = [];
+    this.specifications = [];
   }
 
-  create({ name, description }: ICreateEspecificationDTO): void {
-    const especification = new Especification();
+  create({ name, description }: ICreateSpecificationDTO): void {
+    const specification = new Specification();
 
-    Object.assign(especification, {
+    Object.assign(specification, {
       name,
       description,
       created_at: new Date(),
     });
 
-    this.especifications.push(especification);
+    this.specifications.push(specification);
   }
 
-  list(): Especification[] {
-    return this.especifications;
+  list(): Specification[] {
+    return this.specifications;
   }
 
-  findByName(name: string): Especification {
-    const especification = this.especifications.find(
-      especification => especification.name === name,
+  findByName(name: string): Specification {
+    const specification = this.specifications.find(
+      specification => specification.name === name,
     );
-    return especification;
+    return specification;
   }
 }
 

@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 
-import { CreateSpecificationService } from '../../../services/cars/specification/CreateSpecificationService';
+import { CreateSpecificationService } from '../../services/specification/CreateSpecificationService';
 
 class CreateSpecificationController {
   constructor(private createSpecificationService: CreateSpecificationService) {}

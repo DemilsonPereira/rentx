@@ -1,6 +1,6 @@
-import { CreateCategoryController } from '../../../controller/cars/category/CreateCategoryController';
-import { ListCategoriesController } from '../../../controller/cars/category/ListCategoriesController';
-import { CategoriesRepository } from '../../../repositories/category/CategoriesRepository';
+import { CreateCategoryController } from '../../controller/category/CreateCategoryController';
+import { ListCategoriesController } from '../../controller/category/ListCategoriesController';
+import { CategoriesRepository } from '../../repositories/category/CategoriesRepository';
 import { CreateCategoryService } from './CreateCategoryService';
 import { ListCategoryService } from './ListCategoryService';
 
