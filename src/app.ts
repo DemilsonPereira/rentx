@@ -2,8 +2,10 @@ import cors from 'cors';
 import express, { Request, Response, NextFunction } from 'express';
 import morgan from 'morgan';
 import path from 'path';
+import swaggerUI from 'swagger-ui-express';
 
 import { router } from './routes';
+import swaggerFile from './swagger.json';
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 require('dotenv').config();
@@ -27,6 +29,7 @@ class Server {
     this.app.use(express.json());
     this.app.use(morgan('dev'));
     this.app.use(express.static(path.join(__dirname, 'build')));
+    this.app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerFile));
   }
 
   routes(): void {
