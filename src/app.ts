@@ -3,6 +3,7 @@ import express, { Request, Response, NextFunction } from 'express';
 import morgan from 'morgan';
 import path from 'path';
 import swaggerUI from 'swagger-ui-express';
+import './database';
 
 import { router } from './routes';
 import swaggerFile from './swagger.json';
