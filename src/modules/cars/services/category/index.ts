@@ -1,10 +1,10 @@
 import { CreateCategoryController } from '../../controller/category/CreateCategoryController';
 import { ListCategoriesController } from '../../controller/category/ListCategoriesController';
-import { CategoriesRepository } from '../../repositories/category/CategoriesRepository';
+import { CategoriesRepository } from '../../repositories/category/implementations/CategoriesRepository';
 import { CreateCategoryService } from './CreateCategoryService';
 import { ListCategoryService } from './ListCategoryService';
 
-const categoriesRepository = new CategoriesRepository();
+const categoriesRepository = CategoriesRepository.getInstance();
 const createCategoryService = new CreateCategoryService(categoriesRepository);
 const createCategoryController = new CreateCategoryController(
   createCategoryService,

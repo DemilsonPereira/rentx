@@ -1,10 +1,10 @@
 import { CreateSpecificationController } from '../../controller/specification/CreateSpecificationController';
 import { ListSpecificationController } from '../../controller/specification/ListSpecificationController';
-import { SpecificationsRepository } from '../../repositories/especification/SpecificationsRespository';
+import { SpecificationsRepository } from '../../repositories/especification/implematations/SpecificationsRespository';
 import { CreateSpecificationService } from './CreateSpecificationService';
 import { ListSpecificationService } from './ListSpecificationService';
 
-const specificationsRepository = new SpecificationsRepository();
+const specificationsRepository = SpecificationsRepository.getInstance();
 const createSpecificationService = new CreateSpecificationService(
   specificationsRepository,
 );
