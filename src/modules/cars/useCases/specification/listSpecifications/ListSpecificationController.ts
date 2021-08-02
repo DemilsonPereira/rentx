@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 
-import { ListSpecificationService } from '../../services/specification/ListSpecificationService';
+import { ListSpecificationService } from './ListSpecificationUseCase';
 
 class ListSpecificationController {
   constructor(private listSpecificationService: ListSpecificationService) {}

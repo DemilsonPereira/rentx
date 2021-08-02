@@ -1,9 +1,7 @@
 import { Router } from 'express';
 
-import {
-  createCategoryController,
-  listCategoriesController,
-} from '../modules/cars/services/category';
+import { createCategoryController } from '../modules/cars/useCases/category/createCategory';
+import { listCategoriesController } from '../modules/cars/useCases/category/listCategories';
 
 const categoriesRoutes = Router();
 
