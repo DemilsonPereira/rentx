@@ -8,7 +8,11 @@
   "scripts": {
     "dev": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules --respawn src/server.ts",
     "build": "tsc",
-    "start": "node build/server.js"
+    "start": "node build/server.js",
+    "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js",
+    "typeorm-run": "ts-node-dev ./node_modules/typeorm/cli.js migration:run",
+    "typeorm-create": "ts-node-dev ./node_modules/typeorm/cli.js migration:create -n",
+    "typeorm-revert": "ts-node-dev ./node_modules/typeorm/cli.js migration:revert"
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.2",
@@ -45,6 +49,7 @@
     "jsonwebtoken": "^8.5.1",
     "morgan": "^1.10.0",
     "multer": "^1.4.2",
+    "pg": "^8.7.1",
     "reflect-metadata": "^0.1.13",
     "swagger-ui-express": "^4.1.6",
     "typeorm": "^0.2.35",
