@@ -28,8 +28,7 @@ services:
       - database
     depends_on:
       - database
-
-
+      
 
 volumes:
   pgdata:
