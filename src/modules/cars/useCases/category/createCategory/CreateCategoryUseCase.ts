@@ -22,7 +22,7 @@ class CreateCategoryUseCase {
       throw new Error('Category Already exists!');
     }
 
-    this.categoryRepository.create({ name, description });
+    await this.categoryRepository.create({ name, description });
   }
 }
 
