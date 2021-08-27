@@ -1,14 +1,20 @@
-// import { Specification } from '../../../entities/Specification';
-// import { ISpecificationsRepository } from '../../../repositories/especification/ISpecificationRepository';
+import { inject, injectable } from 'tsyringe';
 
-// class ListSpecificationService {
-//   constructor(private especificationRepository: ISpecificationsRepository) {}
+import { Specification } from '../../../entities/Specification';
+import { ISpecificationsRepository } from '../../../repositories/especification/ISpecificationRepository';
 
-//   execute(): Specification[] {
-//     const specification = this.especificationRepository.list();
+@injectable()
+class ListSpecificationService {
+  constructor(
+    @inject('SpecificationsRepository')
+    private specificationRepository: ISpecificationsRepository,
+  ) {}
 
-//     return specification;
-//   }
-// }
+  async execute(): Promise<Specification[]> {
+    const specification = await this.specificationRepository.list();
 
-// export { ListSpecificationService };
+    return specification;
+  }
+}
+
+export { ListSpecificationService };

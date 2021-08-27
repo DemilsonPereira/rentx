@@ -1,15 +1,18 @@
-// import { Request, Response } from 'express';
+import { Request, Response } from 'express';
+import { container } from 'tsyringe';
 
-// import { ListSpecificationService } from './ListSpecificationUseCase';
+import { ListSpecificationService } from './ListSpecificationUseCase';
 
-// class ListSpecificationController {
-//   constructor(private listSpecificationService: ListSpecificationService) {}
-//   // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-//   handle(request: Request, response: Response): Response {
-//     const all = this.listSpecificationService.execute();
+class ListSpecificationController {
+  async handle(request: Request, response: Response): Promise<Response> {
+    const listSpecificationService = container.resolve(
+      ListSpecificationService,
+    );
 
-//     return response.json(all);
-//   }
-// }
+    const all = await listSpecificationService.execute();
 
-// export { ListSpecificationController };
+    return response.json(all);
+  }
+}
+
+export { ListSpecificationController };
