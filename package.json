@@ -15,6 +15,7 @@
     "typeorm-revert": "ts-node-dev ./node_modules/typeorm/cli.js migration:revert"
   },
   "devDependencies": {
+    "@types/bcrypt": "^5.0.0",
     "@types/bcryptjs": "^2.4.2",
     "@types/cors": "^2.8.12",
     "@types/dotenv": "^8.2.0",
@@ -38,6 +39,7 @@
     "typescript": "^4.3.5"
   },
   "dependencies": {
+    "bcrypt": "^5.0.1",
     "bcryptjs": "^2.4.3",
     "class-transformer": "^0.4.0",
     "cors": "^2.8.5",
