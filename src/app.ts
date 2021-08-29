@@ -1,9 +1,14 @@
 import cors from 'cors';
 import express, { Request, Response, NextFunction } from 'express';
+import 'express-async-errors';
 import morgan from 'morgan';
 import path from 'path';
 import swaggerUI from 'swagger-ui-express';
 
+import './database';
+import './shared/container';
+
+import { AppError } from './errors/AppError';
 import { router } from './routes';
 import swaggerFile from './swagger.json';
 
@@ -21,7 +26,7 @@ class Server {
   }
 
   public configuration(): void {
-    this.app.set('port', process.env.PORT || 3333);
+    this.app.set('port', process.env.PORT || 3000);
   }
 
   middlewares(): void {
@@ -35,7 +40,7 @@ class Server {
   routes(): void {
     this.app.use(router);
     this.app.get('/', (request: Request, response: Response) => {
-      return response.json({ msg: "'Server Online! 🙏'" });
+      return response.json({ msg: 'Server Online! 😎' });
     });
     this.app.use(
       (
@@ -44,14 +49,14 @@ class Server {
         response: Response,
         next: NextFunction,
       ) => {
-        if (err instanceof Error) {
-          return response.status(400).json({
-            error: err.message,
+        if (err instanceof AppError) {
+          return response.status(err.statusCode).json({
+            message: err.message,
           });
         }
         return response.status(500).json({
           status: 'error',
-          message: 'Internal Server Error',
+          message: `Internal server error - ${err.message}`,
         });
       },
     );
