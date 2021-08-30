@@ -7,6 +7,10 @@ import { usersRoutes } from './users.routes';
 
 const router = Router();
 
+router.use('/routers', (request, response) => {
+  return response.json('Routers ok! 😎');
+});
+
 router.use('/categories', categoriesRoutes);
 router.use('/specifications', specificationsRoutes);
 router.use('/users', usersRoutes);

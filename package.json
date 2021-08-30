@@ -1,5 +1,5 @@
 {
-  "name": "rentalx",
+  "name": "rentx",
   "version": "1.0.0",
   "main": "index.js",
   "repository": "https://github.com/DemilsonPereira/rentalx.git",
@@ -12,7 +12,8 @@
     "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js",
     "typeorm-run": "ts-node-dev ./node_modules/typeorm/cli.js migration:run",
     "typeorm-create": "ts-node-dev ./node_modules/typeorm/cli.js migration:create -n",
-    "typeorm-revert": "ts-node-dev ./node_modules/typeorm/cli.js migration:revert"
+    "typeorm-revert": "ts-node-dev ./node_modules/typeorm/cli.js migration:revert",
+    "test": "jest"
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.0",
@@ -20,6 +21,7 @@
     "@types/cors": "^2.8.12",
     "@types/dotenv": "^8.2.0",
     "@types/express": "^4.17.13",
+    "@types/jest": "^27.0.1",
     "@types/jsonwebtoken": "^8.5.5",
     "@types/morgan": "^1.9.3",
     "@types/multer": "^1.4.7",
@@ -33,8 +35,10 @@
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-import-helpers": "^1.1.0",
     "eslint-plugin-prettier": "^3.4.0",
+    "jest": "^27.1.0",
     "plugin": "^0.3.3",
     "prettier": "^2.3.2",
+    "ts-jest": "^27.0.5",
     "ts-node-dev": "^1.1.8",
     "typescript": "^4.3.5"
   },
